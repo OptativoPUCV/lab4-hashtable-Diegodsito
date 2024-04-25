@@ -101,3 +101,14 @@ Thu 25 Apr 2024 09:39:28 PM UTC:
  tests:  5|4
 total_score: 30/70
 5a5e5a0
+Thu 25 Apr 2024 09:45:55 PM UTC: 
+ hashmap.c | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:97:67: error: expected ‘;’ before ‘:’ token
+   97 |     if(is_equal(current->key , key)) return map->buckets[posicion]:
+      |                                                                   ^
+      |                                                                   ;
+Compilation failed
+02143df
