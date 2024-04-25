@@ -42,37 +42,26 @@ int is_equal(void* key1, void* key2){
 void insertMap(HashMap * map, char * key, void * value) {
   if(map==NULL || key==NULL) return;
   
-  if(map->size * 0.7 >= map->capacity) enlarge(map);
-  
-  long posicion = hash(key,map->capacity);
-
-  if(map->buckets[posicion] == NULL){
-    Pair *nuevoPair = createPair(key,value);
-    map->buckets[posicion] = nuevoPair;
-    map->size++;
-    free(nuevoPair);
-  }
-  else{ //Hay colision
+  long posicion = hash(key , map->capacity);
+   //Hay colision
     
-    long aux = map->current;
-    Pair *current = map->buckets[posicion];
+  Pair *current = map->buckets[posicion];
     
-    while(current != NULL){//Si esta la key
+  while(current != NULL){//Si esta la key
       
-      if(is_equal(current->key,key)){
-        map->buckets[posicion]->value = value;
-        return;
-      }
-      
-      current = map->buckets[aux++];
-      map->current = aux;
+    if(is_equal(current->key , key)){
+      map->buckets[posicion]->value = value;
+      return;
     }
+      
+      current = map->buckets[posicion++];
+  }
 
     Pair *nuevoPair = createPair(key,value);
     map->buckets[posicion] = nuevoPair;
     map->size++;
     free(nuevoPair);
-  }
+
 }
 
 void enlarge(HashMap * map) {
