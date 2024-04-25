@@ -123,16 +123,14 @@ Pair * firstMap(HashMap * map) {
   Pair *current = map->buckets[posicion];
   
   while(current == NULL && posicion <= map->size){
-
-    if(current != NULL){
-      map->current = posicion;
-      return map->buckets[posicion];
-    }
     posicion = (posicion + 1) % map->capacity;
     current = map->buckets[posicion];
   }
 
-
+  if(current != NULL){
+    map->current = posicion;
+    return map->buckets[posicion];
+  }
   
   return NULL;
 }
