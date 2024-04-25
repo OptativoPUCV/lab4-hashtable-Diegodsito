@@ -99,13 +99,14 @@ Pair * searchMap(HashMap * map,  char * key) {
 
   if(is_equal(map->buckets[posicion]->key, key)) return map->buckets[posicion];
 
-  while(current != NULL){
+  while(current != NULL && current->key != NULL ){
+    map->current = posicion;
     if(is_equal(current->key , key)) return map->buckets[posicion];
     
     posicion = (posicion + 1) % map->capacity;
     current = map->buckets[posicion];
   }
-  map->current = posicion;
+
 
   return NULL;
 }
