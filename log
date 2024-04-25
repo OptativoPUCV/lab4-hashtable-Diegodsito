@@ -136,3 +136,32 @@ Thu 25 Apr 2024 09:52:19 PM UTC:
  tests:  7|4
 total_score: 30/70
 5a5b21f
+Thu 25 Apr 2024 09:54:15 PM UTC: 
+ hashmap.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+In file included from test.c:4:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:88:15: error: expected expression before ‘void’
+   88 |   if(is_equal(void *key1, void *key2)
+      |               ^~~~
+hashmap.c:88:6: error: too few arguments to function ‘is_equal’
+   88 |   if(is_equal(void *key1, void *key2)
+      |      ^~~~~~~~
+hashmap.c:35:5: note: declared here
+   35 | int is_equal(void* key1, void* key2){
+      |     ^~~~~~~~
+hashmap.c:88:38: error: expected ‘)’ before ‘current’
+   88 |   if(is_equal(void *key1, void *key2)
+      |     ~                                ^
+      |                                      )
+   89 |   current->key = NULL;
+      |   ~~~~~~~                             
+hashmap.c:91:1: error: expected expression before ‘}’ token
+   91 | }
+      | ^
+hashmap.c:86:9: error: unused variable ‘current’ [-Werror=unused-variable]
+   86 |   Pair *current =map->buckets[posicion];
+      |         ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+75bc893
