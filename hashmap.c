@@ -119,10 +119,10 @@ Pair * firstMap(HashMap * map) {
 
   if(map==NULL) return NULL;
   
-  long posicion = -1;
+  long posicion = 0;
   Pair *current = map->buckets[posicion];
   
-  while(current == NULL && posicion != map->size){
+  while(current == NULL && posicion <= map->size){
     posicion = (posicion + 1) % map->capacity;
     current = map->buckets[posicion];
   }
