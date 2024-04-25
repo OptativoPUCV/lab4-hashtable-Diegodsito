@@ -79,7 +79,7 @@ HashMap * createMap(long capacity) {
 }
 
 void eraseMap(HashMap * map,  char * key) {   
-  
+  /*
   if(map==NULL || key==NULL) return;
 
   long posicion = hash(key , map->capacity);
@@ -87,7 +87,7 @@ void eraseMap(HashMap * map,  char * key) {
 
   if(is_equal(void *key1, void *key2)
   current->key = NULL;
-  map->size--;
+  map->size--; */
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   
