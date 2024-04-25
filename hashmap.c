@@ -51,18 +51,19 @@ void insertMap(HashMap * map, char * key, void * value) {
     map->buckets[posicion] = nuevoPair;
     map->size++;
     free(nuevoPair);
-    return;
   }
   else{ //Hay colision
     
     long aux = map->current;
     Pair *current = map->buckets[posicion];
     
-    while(current != NULL){ //Si esta la key
+    while(current != NULL){//Si esta la key
+      
       if(is_equal(current->key,key){
-        current->value = value;
+        map->current = value;
         return;
       }
+      
       current = map->buckets[aux++];
     }
 

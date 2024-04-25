@@ -26,3 +26,21 @@ hashmap.c:58:10: error: unused variable ‘aux’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 7467419
+Thu 25 Apr 2024 08:45:57 PM UTC: 
+ hashmap.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:62:36: error: expected ‘)’ before ‘{’ token
+   62 |       if(is_equal(current->key,key){
+      |         ~                          ^
+      |                                    )
+hashmap.c:68:5: error: expected expression before ‘}’ token
+   68 |     }
+      |     ^
+hashmap.c:57:10: error: unused variable ‘aux’ [-Werror=unused-variable]
+   57 |     long aux = map->current;
+      |          ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+fa8b25e
