@@ -128,7 +128,7 @@ Pair * firstMap(HashMap * map) {
 
   if(current != NULL){
     map->current = posicion;
-    return current;
+    return map->buckets[posicion];
   }
   
   return NULL;
