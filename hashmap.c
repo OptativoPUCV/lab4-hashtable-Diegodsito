@@ -59,7 +59,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     
     while(current != NULL){//Si esta la key
       
-      if(is_equal(current->key,key){
+      if(is_equal(current->key,key)){
         map->current = value;
         return;
       }
@@ -77,8 +77,6 @@ void insertMap(HashMap * map, char * key, void * value) {
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
-
-
 }
 
 
