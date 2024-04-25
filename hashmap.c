@@ -83,8 +83,8 @@ void eraseMap(HashMap * map,  char * key) {
   if(map==NULL || key==NULL) return;
 
   long posicion = hash(key , map->capacity);
-  map->buckets[posicion] = NULL;
-
+  Pair *current =map->buckets[posicion];
+  current->key = NULL;
   map->size--;
 }
 
