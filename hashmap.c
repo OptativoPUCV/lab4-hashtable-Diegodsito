@@ -43,7 +43,6 @@ void insertMap(HashMap * map, char * key, void * value) {
   if(map==NULL || key==NULL) return;
   
   long posicion = hash(key , map->capacity);
-   //Hay colision
     
   Pair *current = map->buckets[posicion];
     
@@ -54,14 +53,12 @@ void insertMap(HashMap * map, char * key, void * value) {
       return;
     }
       
-      current = map->buckets[posicion++];
+    current = map->buckets[posicion++];
   }
 
     Pair *nuevoPair = createPair(key,value);
     map->buckets[posicion] = nuevoPair;
     map->size++;
-    free(nuevoPair);
-
 }
 
 void enlarge(HashMap * map) {
