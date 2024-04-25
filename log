@@ -112,3 +112,9 @@ hashmap.c:97:67: error: expected ‘;’ before ‘:’ token
       |                                                                   ;
 Compilation failed
 02143df
+Thu 25 Apr 2024 09:46:09 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  6|4
+total_score: 30/70
+9dbdd25
