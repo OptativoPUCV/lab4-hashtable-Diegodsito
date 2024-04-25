@@ -60,7 +60,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     while(current != NULL){//Si esta la key
       
       if(is_equal(current->key,key)){
-        map->current = value;
+        map->buckets[posicion]->value = value;
         return;
       }
       
