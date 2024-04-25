@@ -117,7 +117,21 @@ Pair * searchMap(HashMap * map,  char * key) {
 
 Pair * firstMap(HashMap * map) {
 
-    return NULL;
+  if(map==NULL) return NULL;
+  long posicion = 0;
+  Pair *current = map->buckets[posicion];
+  
+  while(current == NULL && posicion != map->size){
+    posicion = (posicion + 1) % map->capacity;
+    current = map->buckets[posicion];
+  }
+
+  if(current != NULL){
+    return current;
+    map->current = posicion;
+  }
+  
+  return NULL;
 }
 
 Pair * nextMap(HashMap * map) {
