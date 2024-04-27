@@ -69,7 +69,6 @@ void enlarge(HashMap * map) {
 
   Pair** old_buckets = map->buckets;
   long old_capacity = map->capacity;
-  long nuevo_size = 0;
   long nueva_capacidad = map->capacity * 2;
 
   HashMap *nuevoMapa = createMap(nueva_capacidad);
