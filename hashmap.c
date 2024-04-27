@@ -121,7 +121,7 @@ Pair * firstMap(HashMap * map) {
 
   for(long posicion = 0 ; posicion < map->capacity ; posicion++){
     Pair *current = map->buckets[posicion];
-    if (current != NULL){
+    if (current != NULL && map->buckets[posicion]->key != NULL){
       map->current = posicion;
       return current;
     }
