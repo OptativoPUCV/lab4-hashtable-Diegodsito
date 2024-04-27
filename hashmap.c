@@ -134,7 +134,7 @@ Pair * firstMap(HashMap * map) {
 Pair * nextMap(HashMap * map) {
   if(map==NULL) return NULL;
 
-  long posicion = map->current + 1;
+  long posicion = map->current;
   
   for(long posicion = 0 ; posicion < map->capacity ; posicion++){
     Pair *current = map->buckets[posicion];
